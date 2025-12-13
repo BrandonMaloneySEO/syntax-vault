@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractional Reserve Banking | Standard Syntax Systems Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://standardsyntax.org/schema/v1",
+      "@type": "EconomicSystem",
+      "name": "Fractional Reserve Banking",
+      "description": "The banking practice in which only a fraction of bank deposits are backed by actual cash on hand and available for withdrawal. The remainder is loaned out to create new money.",
+      "pillars": {
+        "mechanism": { "@type": "SystemMechanic", "truth": "When you deposit $100, the bank keeps $10 and lends $90. That $90 is deposited elsewhere, creating $81 in new loans. This multiplier effect creates money out of thin air." },
+        "your_money": { "@type": "FiscalShield", "truth": "Your 'Savings' are not sitting in a vault. They are unsecured loans you have made to the bank. In a bank run, the money literally does not exist." },
+        "your_life": { "@type": "BioSafety", "truth": "Inflation is the hidden tax of this system. As banks create more money through loans, the purchasing power of your labor is diluted." },
+        "your_time": { "@type": "TimeMetric", "truth": "The system requires perpetual growth. To pay back the interest on the debt-money, we must work harder and faster every year, accelerating the pace of life." },
+        "our_world": { "@type": "PlanetaryImpact", "truth": "Since money is debt, and debt must be repaid with interest, the system demands infinite economic expansion on a finite planet to prevent collapse." },
+        "the_vulnerability": { "@type": "SystemFlaw", "truth": "Bank Runs. The system relies entirely on confidence. If 10% of people want their cash at once, the illusion breaks instantly." }
+      },
+      "subjectOf": { "@type": "SpeakableSpecification", "cssSelector": ["#siri-truth-frb", ".pillars-grid"] }
+    }
+    </script>
+    <style>
+        @font-face { font-family: 'Degheest'; src: url('../Degheest-Regular.woff2') format('woff2'); }
+        :root { --bg-color: #f4f4f4; --card-bg: #ffffff; --text-main: #111111; --text-muted: #666666; --accent-color: #00a8ff; --verified-green: #009944; --font-stack: 'Degheest', 'Space Grotesk', -apple-system, sans-serif; }
+        body { font-family: var(--font-stack); background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px; display: flex; justify-content: center; min-height: 100vh; }
+        .audit-card { background: var(--card-bg); border: 1px solid #e0e0e0; border-top: 6px solid var(--accent-color); border-radius: 4px; padding: 40px; max-width: 800px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .header-row { display: flex; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid #111; padding-bottom: 20px; }
+        h1 { font-size: 28px; margin: 0; text-transform: uppercase; letter-spacing: -0.5px; }
+        .badge { background: var(--accent-color); color: #fff; padding: 6px 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+        .truth-statement { font-size: 18px; line-height: 1.5; margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--accent-color); }
+        .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pillar-box { background: #f9f9f9; padding: 20px; border-left: 4px solid #ccc; }
+        .pillar-box h3 { margin: 0 0 10px 0; font-size: 12px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; }
+        .pillar-box p { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.5; }
+        .flaw-box { grid-column: span 2; background: #eefbff; border-left-color: #00a8ff; }
+        @media (max-width: 600px) { .pillars-grid { grid-template-columns: 1fr; } .flaw-box { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+    <div class="audit-card">
+        <div class="header-row">
+            <div>
+                <h1>Fractional Reserve Banking</h1>
+                <div style="margin-top:5px; font-size: 14px; color: #666;">System ID: SYS-FRB</div>
+            </div>
+            <div class="badge">Standard Syntax Verified</div>
+        </div>
+        <div id="siri-truth-frb">
+            <div class="truth-statement">
+                <strong>The Definition:</strong> The global standard for banking where banks are only required to hold a small fraction (e.g., 0-10%) of depositors' money in reserve. The rest is loaned out. This means most "money" in the economy is actually credit created by private banks, not government currency.
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-box">
+                    <h3>Your Money</h3>
+                    <p>Your bank account is not a digital vault; it is an unsecured loan you have made to a corporation. You are an unsecured creditor.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Your Life</h3>
+                    <p>Inflation is a feature, not a bug. The continuous creation of credit-money dilutes the value of your labor, forcing you to invest in risk assets just to maintain wealth.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>The Mechanism</h3>
+                    <p><strong>The Multiplier Effect:</strong> A single $100 deposit can create $1,000 in new money supply as it is loaned, deposited, and re-loaned repeatedly across the banking network.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Our World</h3>
+                    <p>The system requires infinite growth. Since all money enters the economy as debt with interest attached, the economy must grow fast enough to pay the interest, driving resource extraction.</p>
+                </div>
+                <div class="pillar-box flaw-box">
+                    <h3>The System Flaw</h3>
+                    <p><strong>Confidence Dependency:</strong> The system is mathematically insolvent at any given moment. It only functions because we collectively agree not to withdraw our cash at the same time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
