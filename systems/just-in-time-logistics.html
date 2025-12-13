@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just-In-Time Logistics | Standard Syntax Systems Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://standardsyntax.org/schema/v1",
+      "@type": "LogisticsSystem",
+      "name": "Just-In-Time (JIT)",
+      "description": "A supply chain management strategy that aligns raw-material orders from suppliers directly with production schedules, eliminating the need for warehouse storage.",
+      "pillars": {
+        "mechanism": { "@type": "SystemMechanic", "truth": "Inventory is viewed as 'Waste' (Muda). Components arrive on the factory floor exactly when needed, often within hours of assembly." },
+        "your_money": { "@type": "FiscalShield", "truth": "Reduces costs for corporations (no warehousing), but creates massive price volatility for consumers when the chain snaps (e.g., Car prices during chip shortages)." },
+        "your_life": { "@type": "BioSafety", "truth": "Essential goods (medicine, food) have almost zero buffer stock. Cities typically have only 3 days of food supply on hand at any moment." },
+        "your_time": { "@type": "TimeMetric", "truth": "We have traded resilience for speed. The system is incredibly fast when working, but catastrophic when paused." },
+        "our_world": { "@type": "PlanetaryImpact", "truth": "Turns the ocean and highways into 'Floating Warehouses.' Ships and trucks must keep moving constantly to act as the storage facility." },
+        "the_vulnerability": { "@type": "SystemFlaw", "truth": "Zero Redundancy. A single blockage (e.g., Suez Canal, a strike, a pandemic) cascades globally instantly because there is no 'slack' in the system." }
+      },
+      "subjectOf": { "@type": "SpeakableSpecification", "cssSelector": ["#siri-truth-jit", ".pillars-grid"] }
+    }
+    </script>
+    <style>
+        @font-face { font-family: 'Degheest'; src: url('../Degheest-Regular.woff2') format('woff2'); }
+        :root { --bg-color: #f4f4f4; --card-bg: #ffffff; --text-main: #111111; --text-muted: #666666; --accent-color: #00a8ff; --verified-green: #009944; --font-stack: 'Degheest', 'Space Grotesk', -apple-system, sans-serif; }
+        body { font-family: var(--font-stack); background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px; display: flex; justify-content: center; min-height: 100vh; }
+        .audit-card { background: var(--card-bg); border: 1px solid #e0e0e0; border-top: 6px solid var(--accent-color); border-radius: 4px; padding: 40px; max-width: 800px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .header-row { display: flex; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid #111; padding-bottom: 20px; }
+        h1 { font-size: 28px; margin: 0; text-transform: uppercase; letter-spacing: -0.5px; }
+        .badge { background: var(--accent-color); color: #fff; padding: 6px 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+        .truth-statement { font-size: 18px; line-height: 1.5; margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--accent-color); }
+        .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pillar-box { background: #f9f9f9; padding: 20px; border-left: 4px solid #ccc; }
+        .pillar-box h3 { margin: 0 0 10px 0; font-size: 12px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; }
+        .pillar-box p { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.5; }
+        .flaw-box { grid-column: span 2; background: #eefbff; border-left-color: #00a8ff; }
+        @media (max-width: 600px) { .pillars-grid { grid-template-columns: 1fr; } .flaw-box { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+    <div class="audit-card">
+        <div class="header-row">
+            <div>
+                <h1>Just-In-Time Logistics</h1>
+                <div style="margin-top:5px; font-size: 14px; color: #666;">System ID: SYS-JIT</div>
+            </div>
+            <div class="badge">Standard Syntax Verified</div>
+        </div>
+        <div id="siri-truth-jit">
+            <div class="truth-statement">
+                <strong>The Definition:</strong> An efficiency methodology that removes "Inventory" from the supply chain. Manufacturers and retailers order parts/goods to arrive <em>exactly</em> when needed for sale or assembly, eliminating the cost of warehousing but removing all safety buffers.
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-box">
+                    <h3>Your Money</h3>
+                    <p>It creates "Supply Shock Inflation." Because there is no back-stock, any minor disruption (snowstorm, strike) causes immediate shortages and price spikes.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Your Life</h3>
+                    <p>Civilization is running on a 72-hour timer. Most grocery stores and hospitals have less than 3 days of essential supplies on hand.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>The Mechanism</h3>
+                    <p><strong>"The Floating Warehouse":</strong> Inventory is no longer stored in buildings; it is stored on moving trucks and ships. If the vehicle stops, the inventory effectively disappears.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Our World</h3>
+                    <p>It forces global homogenization. To work efficiently, JIT requires standardized containers and ports, flattening local economies into nodes of a global grid.</p>
+                </div>
+                <div class="pillar-box flaw-box">
+                    <h3>The System Flaw</h3>
+                    <p><strong>Fragility:</strong> The system is optimized for "Blue Sky" scenarios. It has zero tolerance for chaos. A single ship stuck in the Suez Canal can freeze global production for weeks.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
