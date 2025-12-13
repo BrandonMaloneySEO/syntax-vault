@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Syntax | Cognition Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face { font-family: 'Degheest'; src: url('../Degheest-Regular.woff2') format('woff2'); }
+        :root { 
+            --bg-color: #f4f4f4; 
+            --card-bg: #ffffff; 
+            --text-main: #111111; 
+            --text-muted: #666666; 
+            --accent-color: #e84118; /* Cognition Red - Urgent/Warning */
+            --verified-green: #009944; 
+            --font-stack: 'Degheest', 'Space Grotesk', -apple-system, sans-serif; 
+        }
+        
+        body { font-family: var(--font-stack); background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px; display: flex; justify-content: center; min-height: 100vh; }
+        
+        .directory-card { background: var(--card-bg); border: 1px solid #e0e0e0; border-top: 6px solid var(--accent-color); border-radius: 4px; padding: 40px; max-width: 800px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        
+        /* Breadcrumb Navigation */
+        .breadcrumb { font-size: 11px; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 1px; }
+        .breadcrumb a { text-decoration: none; color: var(--text-muted); }
+        .breadcrumb a:hover { color: var(--accent-color); }
+        .breadcrumb span { margin: 0 5px; color: #ccc; }
+
+        h1 { font-size: 24px; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: -0.5px; }
+        .sub-head { color: var(--text-muted); font-size: 14px; margin-bottom: 40px; border-bottom: 2px solid #111; padding-bottom: 20px; }
+        
+        .section-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 15px; letter-spacing: 1px; margin-top: 30px; }
+        
+        .file-list { list-style: none; padding: 0; margin: 0; }
+        .file-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee; transition: background 0.2s; }
+        .file-item:hover { padding-left: 10px; background: #fafafa; }
+        
+        .file-link { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 16px; display: block; width: 100%; }
+        .file-link:hover { color: var(--accent-color); }
+        
+        .status-badge { background: #eee; font-size: 10px; padding: 4px 8px; border-radius: 4px; color: #555; font-family: monospace; }
+        .verified { background: #e6f4ea; color: #1e8e3e; }
+        .queued { background: #fff3cd; color: #856404; }
+        
+        .meta-footer { margin-top: 50px; font-size: 12px; color: #999; text-align: center; border-top: 1px solid #eee; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="directory-card">
+        <div class="breadcrumb">
+            <a href="../index.html">Master Node</a> <span>/</span> Cognition
+        </div>
+        
+        <h1>Cognition & Psychology</h1>
+        <div class="sub-head">Auditing the Software of the Human Mind</div>
+
+        <div class="section-title">Logical Exploits & Fallacies</div>
+        <ul class="file-list">
+            <li class="file-item">
+                <a href="sunk-cost-fallacy.html" class="file-link">Sunk Cost Fallacy</a>
+                <span class="status-badge verified">PENDING</span>
+            </li>
+            <li class="file-item">
+                <a href="normalization-of-deviance.html" class="file-link">Normalization of Deviance</a>
+                <span class="status-badge verified">PENDING</span>
+            </li>
+        </ul>
+
+        <div class="section-title">Social Dynamics & Control</div>
+        <ul class="file-list">
+            <li class="file-item">
+                <a href="dunbar-number.html" class="file-link">The Dunbar Number (Limit of Connection)</a>
+                <span class="status-badge queued">QUEUED</span>
+            </li>
+            <li class="file-item">
+                <a href="stockholm-syndrome.html" class="file-link">Stockholm Syndrome (Captive Bonding)</a>
+                <span class="status-badge queued">QUEUED</span>
+            </li>
+            <li class="file-item">
+                <a href="triangulation-tactics.html" class="file-link">Triangulation (Narcissistic Control)</a>
+                <span class="status-badge queued">QUEUED</span>
+            </li>
+        </ul>
+
+        <div class="section-title">Perception Filters</div>
+        <ul class="file-list">
+            <li class="file-item">
+                <a href="overton-window.html" class="file-link">The Overton Window</a>
+                <span class="status-badge queued">QUEUED</span>
+            </li>
+            <li class="file-item">
+                <a href="hyper-normalization.html" class="file-link">HyperNormalisation</a>
+                <span class="status-badge queued">QUEUED</span>
+            </li>
+        </ul>
+
+        <div class="meta-footer">
+            Category ID: COG-01 • Standard Syntax Protocol
+        </div>
+    </div>
+
+</body>
+</html>
