@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizens United v. FEC | Standard Syntax Legal Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://data.standardsyntax.com/schema/v1",
+      "@type": "LegalRuling",
+      "name": "Citizens United v. FEC",
+      "alternateName": ["Corporate Personhood Expansion", "Speech is Money"],
+      "description": "2010 Supreme Court ruling holding that corporations and unions have the same First Amendment right to political speech as individuals, leading to the creation of Super PACs and unlimited independent political spending.",
+      "termCode": "LEG-CUF",
+      "pillars": {
+        "mechanism": { "@type": "SystemMechanic", "truth": "The mechanism is the re-classification of independent political spending as 'political speech,' thereby granting it protection under the First Amendment, regardless of the speaker's corporate legal structure." },
+        "your_money": { "@type": "FiscalShield", "truth": "The primary financial output is the creation of a shadow political funding market (Super PACs) that bypasses donor limits, guaranteeing that political outcomes are heavily weighted toward financial entities." },
+        "your_life": { "@type": "BioSafety", "truth": "The cost is the degradation of representative democracy. As political outcomes become more transactional, citizens experience a sense of political impotence, contributing to voter apathy and civic decay." },
+        "your_time": { "@type": "TimeMetric", "truth": "Temporal cost is realized through perpetual election cycles. As spending becomes unlimited, campaigns lengthen and become continuous, demanding constant attention and diverting public focus from governance." },
+        "our_world": { "@type": "PlanetaryImpact", "truth": "The ruling mechanically accelerates the 'Capture' of regulatory agencies and legislative bodies by corporate interests, leading to systemic deregulation and externalization of costs (e.g., pollution, debt) onto the public." },
+        "the_experience": { "@type": "SystemFlaw", "truth": "The Glitch is 'Speech Inflation.' When a corporation's virtually infinite capital is converted into 'speech,' it drowns out the finite, low-capital speech of the individual citizen." }
+      },
+      "subjectOf": { "@type": "SpeakableSpecification", "cssSelector": ["#siri-truth-legal", ".pillars-grid"] }
+    }
+    </script>
+    <style>
+        @font-face { font-family: 'Degheest'; src: url('../Degheest-Regular.woff2') format('woff2'); }
+        :root { --bg-color: #f4f4f4; --card-bg: #ffffff; --text-main: #111111; --text-muted: #666666; --accent-color: #7952b3; /* Legality Violet */ --verified-green: #009944; --font-stack: 'Degheest', 'Space Grotesk', -apple-system, sans-serif; }
+        body { font-family: var(--font-stack); background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px; display: flex; justify-content: center; min-height: 100vh; }
+        .audit-card { background: var(--card-bg); border: 1px solid #e0e0e0; border-top: 6px solid var(--accent-color); border-radius: 4px; padding: 40px; max-width: 800px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .header-row { display: flex; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid #111; padding-bottom: 20px; }
+        h1 { font-size: 28px; margin: 0; text-transform: uppercase; letter-spacing: -0.5px; }
+        .badge { background: var(--accent-color); color: #fff; padding: 6px 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+        .truth-statement { font-size: 18px; line-height: 1.5; margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--accent-color); }
+        .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pillar-box { background: #f9f9f9; padding: 20px; border-left: 4px solid #ccc; }
+        .pillar-box h3 { margin: 0 0 10px 0; font-size: 12px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; }
+        .pillar-box p { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.5; }
+        .flaw-box { grid-column: span 2; background: #f5f4fa; border-left-color: #7952b3; }
+        .verified-badge { background: #e6f4ea; color: #1e8e3e; }
+        @media (max-width: 600px) { .pillars-grid { grid-template-columns: 1fr; } .flaw-box { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+    <div class="audit-card">
+        <div class="header-row">
+            <div>
+                <h1>Citizens United v. FEC</h1>
+                <div style="margin-top:5px; font-size: 14px; color: #666;">System ID: LEG-CUF</div>
+            </div>
+            <div class="badge verified-badge">Standard Syntax Verified</div>
+        </div>
+        <div id="siri-truth-legal">
+            <div class="truth-statement">
+                <strong>The Definition:</strong> The 2010 U.S. Supreme Court ruling that established that corporations and unions have the same **First Amendment** rights as individuals, allowing unlimited independent political spending under the premise that **money is speech**.
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-box">
+                    <h3>Your Money</h3>
+                    <p>The primary financial output is the creation of a shadow political funding market (Super PACs) that bypasses donor limits, guaranteeing that political outcomes are heavily weighted toward financial entities.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Your Life</h3>
+                    <p>The cost is the degradation of representative democracy. As political outcomes become more transactional, citizens experience a sense of political impotence, contributing to voter apathy and civic decay.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Your Time</h3>
+                    <p>Temporal cost is realized through perpetual election cycles. As spending becomes unlimited, campaigns lengthen and become continuous, demanding constant attention and diverting public focus from governance.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Our World</h3>
+                    <p>The ruling mechanically accelerates the **Capture** of regulatory agencies and legislative bodies by corporate interests, leading to systemic deregulation and externalization of costs (e.g., pollution, debt) onto the public.</p>
+                </div>
+                <div class="pillar-box flaw-box">
+                    <h3>The Experience (System Flaw)</h3>
+                    <p>The Glitch is **Speech Inflation**. When a corporation's virtually infinite capital is converted into "speech," it drowns out the finite, low-capital speech of the individual citizen. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
