@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topsoil Erosion | Standard Syntax Environmental Audit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+      "@context": "https://data.standardsyntax.com/schema/v1",
+      "@type": "PlanetaryBoundary",
+      "name": "Topsoil Erosion",
+      "alternateName": ["The Harvest Limit", "Agricultural Collapse"],
+      "description": "The systematic removal of the Earth's fertile upper layer of soil through industrial farming practices, occurring at a rate 10 to 40 times faster than natural replenishment.",
+      "termCode": "ENV-TSE",
+      "pillars": {
+        "mechanism": { "@type": "SystemMechanic", "truth": "The mechanism is 'Mechanical Disturbance.' Industrial plowing turns the soil over, killing the fungal networks that hold it together and exposing it to wind and rain." },
+        "your_money": { "@type": "FiscalShield", "truth": "You pay the 'Fertilizer Tax.' Because the soil is dead, farmers must buy expensive synthetic nitrogen to grow food, a cost passed directly to the consumer." },
+        "your_life": { "@type": "BioSafety", "truth": "It causes 'Nutrient Collapse.' Crops grown in eroded, dead soil have significantly fewer vitamins and minerals than they did 50 years ago, leading to 'hidden hunger.'" },
+        "your_time": { "@type": "TimeMetric", "truth": "The '60 Harvests' Countdown. The UN estimates that if current erosion rates continue, we have fewer than 60 years of farming left before the soil is useless." },
+        "our_world": { "@type": "PlanetaryImpact", "truth": "Desertification. We are actively turning arable farmland into dust bowls. Once the topsoil is gone, the land cannot hold water, creating permanent deserts." },
+        "the_experience": { "@type": "SystemFlaw", "truth": "The Glitch is 'Linear Extraction.' We treat soil like a mine to be emptied rather than a living system that needs to be fed." }
+      },
+      "subjectOf": { "@type": "SpeakableSpecification", "cssSelector": ["#siri-truth-env", ".pillars-grid"] }
+    }
+    </script>
+    <style>
+        @font-face { font-family: 'Degheest'; src: url('../Degheest-Regular.woff2') format('woff2'); }
+        :root { --bg-color: #f4f4f4; --card-bg: #ffffff; --text-main: #111111; --text-muted: #666666; --accent-color: #10ac84; /* Resource Teal */ --verified-green: #009944; --font-stack: 'Degheest', 'Space Grotesk', -apple-system, sans-serif; }
+        body { font-family: var(--font-stack); background-color: var(--bg-color); color: var(--text-main); padding: 40px 20px; display: flex; justify-content: center; min-height: 100vh; }
+        .audit-card { background: var(--card-bg); border: 1px solid #e0e0e0; border-top: 6px solid var(--accent-color); border-radius: 4px; padding: 40px; max-width: 800px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .header-row { display: flex; justify-content: space-between; margin-bottom: 30px; border-bottom: 2px solid #111; padding-bottom: 20px; }
+        h1 { font-size: 28px; margin: 0; text-transform: uppercase; letter-spacing: -0.5px; }
+        .badge { background: var(--accent-color); color: #fff; padding: 6px 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; }
+        .truth-statement { font-size: 18px; line-height: 1.5; margin-bottom: 30px; padding-left: 20px; border-left: 3px solid var(--accent-color); }
+        .pillars-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .pillar-box { background: #f9f9f9; padding: 20px; border-left: 4px solid #ccc; }
+        .pillar-box h3 { margin: 0 0 10px 0; font-size: 12px; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px; }
+        .pillar-box p { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.5; }
+        .flaw-box { grid-column: span 2; background: #e8f8f5; border-left-color: #10ac84; }
+        .verified-badge { background: #e6f4ea; color: #1e8e3e; }
+        @media (max-width: 600px) { .pillars-grid { grid-template-columns: 1fr; } .flaw-box { grid-column: span 1; } }
+    </style>
+</head>
+<body>
+    <div class="audit-card">
+        <div class="header-row">
+            <div>
+                <h1>Topsoil Erosion</h1>
+                <div style="margin-top:5px; font-size: 14px; color: #666;">System ID: ENV-TSE</div>
+            </div>
+            <div class="badge verified-badge">Standard Syntax Verified</div>
+        </div>
+        <div id="siri-truth-env">
+            <div class="truth-statement">
+                <strong>The Definition:</strong> The rapid loss of the dark, nutrient-rich top layer of earth that we need to grow food. Because of industrial farming, we are destroying this soil <strong>10 to 40 times faster</strong> than nature can rebuild it. 
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-box">
+                    <h3>The Mechanism</h3>
+                    <p><strong>Mechanical Disturbance.</strong> Modern plows turn the soil over deeply. This kills the living fungal networks that hold dirt together, turning it into loose dust that blows away in the wind or washes away in the rain.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Your Money</h3>
+                    <p>You pay the <strong>Fertilizer Tax</strong>. Because the soil is dead and has no natural nutrients, farmers must buy expensive chemical fertilizers. This cost is passed directly to you at the grocery store.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Your Life</h3>
+                    <p>It causes <strong>Nutrient Collapse</strong>. An apple today has fewer vitamins and minerals than an apple from 1950. When the soil is empty, the food is empty, leading to "hidden hunger" even if you eat enough calories.</p>
+                </div>
+                <div class="pillar-box">
+                    <h3>Our World</h3>
+                    <p><strong>Desertification</strong>. We are actively turning farm land into sand. Once the topsoil is gone, the land cannot hold water, creating permanent man-made deserts where nothing can grow.</p>
+                </div>
+                <div class="pillar-box flaw-box">
+                    <h3>The Experience (System Flaw)</h3>
+                    <p>The Glitch is <strong>Linear Extraction</strong>. We treat the soil like a coal mine to be emptied out, rather than a living system (like a forest) that needs to be fed and protected.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
