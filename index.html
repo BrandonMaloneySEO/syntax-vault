@@ -2,23 +2,181 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Standard Syntax Entity Vault | Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standard Syntax | Verified Entity Vault</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <meta name="description" content="The official registry of Standard Syntax Verified Entities. Double-Geo anchored data for the AI age.">
+    
     <style>
-        body { font-family: 'Space Grotesk', sans-serif; padding: 40px; background: #f4f4f4; color: #111; max-width: 800px; margin: 0 auto; }
-        h1 { border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 10px; background: #fff; border: 1px solid #ddd; padding: 15px; border-radius: 4px; transition: transform 0.2s; }
-        li:hover { transform: translateX(5px); border-color: #000; }
-        a { text-decoration: none; color: #111; font-weight: 500; display: block; }
-        .badge { background: #000; color: #fff; padding: 2px 6px; font-size: 10px; text-transform: uppercase; margin-right: 10px; }
+        /* CORE VARIABLES */
+        :root {
+            --bg-color: #f0f0f0;
+            --card-bg: #ffffff;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --accent: #000000;
+            --folder-color: #005f87;
+            --font-stack: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* RESET & BASE */
+        * { box-sizing: border-box; }
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* MAIN CONTAINER */
+        .vault-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* HEADER TERMINAL STYLE */
+        .terminal-header {
+            background: var(--text-main);
+            color: #fff;
+            padding: 20px;
+            border-radius: 4px 4px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-light {
+            height: 8px;
+            width: 8px;
+            background-color: #00ff41; /* Cyber Green */
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 5px #00ff41;
+        }
+
+        /* MAIN LIST CARD */
+        .index-card {
+            background: var(--card-bg);
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 1.5;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+        }
+
+        /* THE LIST ITSELF */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 15px 20px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+            border-color: #000;
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        /* BADGES */
+        .badge, .dir-badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 8px;
+            border-radius: 2px;
+            margin-right: 15px;
+            min-width: 80px;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .badge { background: #000; color: #fff; }
+        .dir-badge { background: var(--folder-color); color: #fff; }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+        
+        @media (max-width: 600px) {
+            .index-card { padding: 20px; }
+            li { flex-direction: column; align-items: flex-start; }
+            .badge { margin-bottom: 8px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Verified Entity Index</h1>
 
-    <ul id="entity-list">
-        <li>No entities found yet.</li>
-    </ul>
-    </body>
+    <div class="vault-container">
+        <div class="terminal-header">
+            <div><span class="status-light"></span>System Online</div>
+            <div>Auth: Public</div>
+        </div>
+
+        <div class="index-card">
+            <h1>Standard Syntax Vault</h1>
+            <div class="subtitle">
+                The official registry of double-anchored entity data. <br>
+                Optimized for Artificial Intelligence & Voice Search.
+            </div>
+
+            <ul id="entity-list">
+                </ul>
+            
+            <div class="footer">
+                &copy; 2025 Standard Syntax Protocol • Built on GitHub Pages
+            </div>
+        </div>
+    </div>
+
+</body>
 </html>
