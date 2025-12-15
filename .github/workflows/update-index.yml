@@ -1,32 +1,27 @@
-name: Run Archivist
+name: Debug Archivist
 
-on:
-  push:
-    paths:
-      - '**/*.html'
-      - 'scripts/archivist.py'
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  debug:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v3
+
+      - name: List Files (Does the script exist?)
+        run: ls -R scripts/
+
+      - name: Check Script Content (Is it squashed?)
+        run: cat scripts/archivist.py
 
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      - name: Run Archivist Script
+      - name: Run Script
         run: python scripts/archivist.py
-
-      - name: Commit Changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "🤖 Index Auto-Update"
-          file_pattern: "**/*.html"
