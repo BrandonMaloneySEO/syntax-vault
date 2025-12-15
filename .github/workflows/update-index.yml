@@ -1,9 +1,10 @@
-name: Master Archivist (Recursive)
+name: Master Archivist (Python)
 
 on:
   push:
     paths:
       - '**/*.html'
+      - 'scripts/archivist.py'
   workflow_dispatch:
 
 permissions:
@@ -16,102 +17,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Run Master Archivist Script
-        run: |
-          # --- FUNCTION: GENERATE INDEX FOR A FOLDER ---
-          generate_folder_index() {
-            target_dir=$1
-            title_prefix=$2
-            
-            echo "Processing Folder: $target_dir"
-            
-            # 1. Check/Create index.html if missing
-            if [ ! -f "$target_dir/index.html" ]; then
-              echo "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Standard Syntax | $title_prefix</title><link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap' rel='stylesheet'><style>body{font-family:'Space Grotesk',sans-serif;padding:40px;background:#f4f4f4;color:#111;max-width:800px;margin:0 auto}h1{border-bottom:2px solid #000;padding-bottom:10px;margin-bottom:20px}ul{list-style:none;padding:0}li{margin-bottom:10px;background:#fff;border:1px solid #ddd;padding:15px;border-radius:4px;transition:transform .2s}li:hover{transform:translateX(5px);border-color:#000}a{text-decoration:none;color:#111;font-weight:500;display:block}.badge{background:#000;color:#fff;padding:2px 6px;font-size:10px;text-transform:uppercase;margin-right:10px}.dir-badge{background:#005f87;color:#fff;padding:2px 6px;font-size:10px;text-transform:uppercase;margin-right:10px}</style></head><body><h1>$title_prefix Index</h1><ul id='entity-list'><li>Empty</li></ul></body></html>" > "$target_dir/index.html"
-            fi
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
-            # 2. Build the File List (HTML files only, exclude index.html)
-            echo "" > list_buffer.tmp
-            
-            # Find files in this dir only (maxdepth 1)
-            find "$target_dir" -maxdepth 1 -name "*.html" | sort | while read filepath; do
-              filename=$(basename "$filepath")
-              
-              if [ "$filename" != "index.html" ]; then
-                # Extract Title
-                TITLE=$(grep -oP '(?<=<title>).*?(?=</title>)' "$filepath" | head -1)
-                if [ -z "$TITLE" ]; then TITLE="$filename"; fi
-                
-                # Write List Item
-                echo "<li><span class='badge'>Verified</span><a href='$filename'>$TITLE</a></li>" >> list_buffer.tmp
-              fi
-            done
-            
-            # 3. Inject into index.html
-            awk '
-              // { print; system("cat list_buffer.tmp"); found=1 }
-              // { found=0 }
-              !found { print }
-            ' "$target_dir/index.html" > "$target_dir/index.temp.html"
-            
-            mv "$target_dir/index.temp.html" "$target_dir/index.html"
-            rm list_buffer.tmp
-          }
-
-          # --- EXECUTION PHASE ---
-
-          # 1. Process Sub-Directories (The "Rooms")
-          # We look for folders that are NOT hidden (.git) and NOT current (.)
-          find . -maxdepth 1 -type d -not -path '*/.*' -not -path '.' | sort | while read dir; do
-            # Strip the "./" prefix
-            clean_dir=$(basename "$dir")
-            # Generate Title (Capitalize first letter)
-            clean_title="$(tr '[:lower:]' '[:upper:]' <<< ${clean_dir:0:1})${clean_dir:1}"
-            
-            # Run the generator for this folder
-            generate_folder_index "$clean_dir" "$clean_title"
-          done
-
-          # 2. Process Root Directory (The "Lobby")
-          # For the root, we do something special: We list Files AND Folders.
-          
-          echo "" > root_buffer.tmp
-          
-          # A. Add Links to Folders (Collections)
-          find . -maxdepth 1 -type d -not -path '*/.*' -not -path '.' | sort | while read dir; do
-             clean_dir=$(basename "$dir")
-             clean_title="$(tr '[:lower:]' '[:upper:]' <<< ${clean_dir:0:1})${clean_dir:1}"
-             echo "<li><span class='dir-badge'>Collection</span><a href='$clean_dir/index.html'>📂 <strong>$clean_title Vault</strong></a></li>" >> root_buffer.tmp
-          done
-          
-          # B. Add Root Files
-          find . -maxdepth 1 -name "*.html" | sort | while read filepath; do
-            filename=$(basename "$filepath")
-            if [ "$filename" != "index.html" ]; then
-               TITLE=$(grep -oP '(?<=<title>).*?(?=</title>)' "$filepath" | head -1)
-               if [ -z "$TITLE" ]; then TITLE="$filename"; fi
-               echo "<li><span class='badge'>Entity</span><a href='$filename'>$TITLE</a></li>" >> root_buffer.tmp
-            fi
-          done
-          
-          # C. Inject into Root index.html
-          # Ensure root index exists
-          if [ ! -f "index.html" ]; then
-             echo "Creating root index..."
-             # (Same template creation logic as above would go here if needed, but assuming you have one)
-          fi
-          
-          awk '
-              // { print; system("cat root_buffer.tmp"); found=1 }
-              // { found=0 }
-              !found { print }
-            ' index.html > index.new.html
-            
-          mv index.new.html index.html
-          rm root_buffer.tmp
+      - name: Run Archivist Script
+        run: python scripts/archivist.py
 
       - name: Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "📚 Master Archivist: Updated Hierarchy"
+          commit_message: "📚 Archivist: Index Update"
           file_pattern: "**/*.html"
